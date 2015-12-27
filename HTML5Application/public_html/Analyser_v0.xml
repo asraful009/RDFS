@@ -2,5 +2,22 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:dc="http://purl.org/dc/elements/1.1/">
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:analyser="https://en.wikipedia.org/wiki/"
+>
+    
+    <rdfs:class rdf:about="&analyser;analyser" />
+    <rdfs:class rdf:about="&analyser;company" />
+    
+    <rdfs:class rdf:about="&analyser;manufactory">
+        <rdfs:subClassOf rdf:resource="#company" />
+    </rdfs:class>
+    <rdfs:class rdf:about="&analyser;published" >
+        <rdfs:subClassOf rdf:resource="#company" />
+    </rdfs:class>
+    <rdfs:class rdf:about="&analyser;description" >
+        <rdfs:subClassOf rdf:resource="#company" />
+        <rdfs:subClassOf rdf:resource="#analyser" />
+    </rdfs:class>
+    
 </rdf:RDF>
