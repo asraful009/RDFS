@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-	xmlns:owl="http://www.w3.org/2002/07/owl#"
-	xmlns:dc="http://purl.org/dc/elements/1.1/"
-        xmlns:analyser="https://en.wikipedia.org/wiki/"
->
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:bts="http://biotechservices-bd.com/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dbo="http://dbpedia.org/ontology/"
+    >
     
-    <rdfs:class rdf:about="&analyser;analyser" />
-    <rdfs:class rdf:about="&analyser;company" />
+    <!--analyser -->
+    <rdfs:class rdf:about="&bts;analyser" />
+    <rdfs:class rdf:about="&analyser;model">
+        <rdfs:subClassOf rdf:resource="#company" />
+    </rdfs:class>
+    <!--analyser -->
+    
+    <!-- company -->
     
     <rdfs:class rdf:about="&analyser;manufactory">
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+    </rdfs:class>
+    <rdfs:class rdf:about="&analyser;marketingBy" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+    </rdfs:class>
+    <rdfs:class rdf:about="&bts;Distributor" >
         <rdfs:subClassOf rdf:resource="#company" />
     </rdfs:class>
-    <rdfs:class rdf:about="&analyser;published" >
-        <rdfs:subClassOf rdf:resource="#company" />
+    
+    <!-- company -->
+    
+    
+    
+    <!-- client -->
+    <rdfs:class rdf:about="&analyser;client" >
     </rdfs:class>
+    <!-- client -->
+    
     <rdfs:class rdf:about="&analyser;description" >
-        <rdfs:subClassOf rdf:resource="#company" />
-        <rdfs:subClassOf rdf:resource="#analyser" />
     </rdfs:class>
     
 </rdf:RDF>
