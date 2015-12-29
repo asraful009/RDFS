@@ -7,43 +7,34 @@
  <!ENTITY bts "http://biotechservices-bd.com/" >
  <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
  <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
- <!ENTITY dbo "http://dbpedia.org/ontology/" >
 ]>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:base="http://biotechservices-bd.com/"
+    xmlns:bts="http://biotechservices-bd.com/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:dbo="http://dbpedia.org/ontology/"
     >
     
     <!--analyser -->
-    <rdfs:class rdf:about="&bts;Analyser" >
-        <rdfs:comment>
-            https://en.wikipedia.org/wiki/Automated_analyser
-        </rdfs:comment>
+    <rdfs:class rdf:about="analyser" />
+    <rdfs:class rdf:about="&analyser;model">
+        <rdfs:subClassOf rdf:resource="#company" />
     </rdfs:class>
-    <rdfs:class rdf:about="&bts;Model">
-        <rdfs:subClassOf rdf:resource="&bts;Analyser" />
-    </rdfs:class>
-    
     <!--analyser -->
     
     <!-- company -->
-    <rdfs:class rdf:about="&bts;Manufactory">
+    
+    <rdfs:class rdf:about="&analyser;manufactory">
         <rdfs:subClassOf rdf:resource="&dbo;Company" />
     </rdfs:class>
-    <rdfs:class rdf:about="&bts;MarketingBy" >
+    <rdfs:class rdf:about="&analyser;marketingBy" >
         <rdfs:subClassOf rdf:resource="&dbo;Company" />
-        
     </rdfs:class>
     <rdfs:class rdf:about="&bts;Distributor" >
-        <rdfs:subClassOf rdf:resource="&dbo;Company" />
-        <rdfs:comment>
-            https://en.wikipedia.org/wiki/Distribution_(business)
-        </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="#company" />
     </rdfs:class>
     
     <!-- company -->
@@ -51,15 +42,11 @@
     
     
     <!-- client -->
-    <rdfs:class rdf:about="&bts;Customer" >
-        <rdfs:subClassOf rdf:resource="&dbo;Company" />
-        <rdfs:comment>
-            https://en.wikipedia.org/wiki/Customer
-        </rdfs:comment>
+    <rdfs:class rdf:about="&analyser;client" >
     </rdfs:class>
     <!-- client -->
     
-    <rdfs:class rdf:about="&bts;Description" >
+    <rdfs:class rdf:about="&analyser;description" >
     </rdfs:class>
     
 </rdf:RDF>
