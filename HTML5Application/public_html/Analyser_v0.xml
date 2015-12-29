@@ -26,7 +26,13 @@
         </rdfs:comment>
     </rdfs:class>
     <rdfs:class rdf:about="&bts;Model">
-        <rdfs:subClassOf rdf:resource="&bts;Analyser" />
+    </rdfs:class>
+    <rdfs:class rdf:about="&bts;Category">
+    </rdfs:class>
+    <rdfs:class rdf:about="&bts;Technology">
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Health_technology
+        </rdfs:comment>
     </rdfs:class>
     
     <!--analyser -->
@@ -34,15 +40,24 @@
     <!-- company -->
     <rdfs:class rdf:about="&bts;Manufactory">
         <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Industry
+        </rdfs:comment>
     </rdfs:class>
     <rdfs:class rdf:about="&bts;MarketingBy" >
         <rdfs:subClassOf rdf:resource="&dbo;Company" />
-        
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Marketing
+        </rdfs:comment>
     </rdfs:class>
     <rdfs:class rdf:about="&bts;Distributor" >
         <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:subClassOf rdf:resource="&bts;MarketingBy" />
         <rdfs:comment>
-            https://en.wikipedia.org/wiki/Distribution_(business)
+            https://en.wikipedia.org/wiki/Marketing
+        </rdfs:comment>
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Trading_company
         </rdfs:comment>
     </rdfs:class>
     
