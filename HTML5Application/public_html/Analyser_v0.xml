@@ -17,7 +17,17 @@
     xmlns:base="http://biotechservices-bd.com/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:dbo="http://dbpedia.org/ontology/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
     >
+    
+    <!-- creator -->
+    <owl:Ontology rdf:about="&bts;">
+        <dc:creator rdf:datatype="&xsd;string">
+            Asraful Islam
+        </dc:creator>
+    </owl:Ontology>
+    <owl:AnnotationProperty rdf:about="&dc;creator"/>
+    <!-- creator -->
     
     <!--analyser -->
     <rdfs:class rdf:about="&bts;Analyser" >
@@ -28,6 +38,9 @@
     <rdfs:class rdf:about="&bts;Model">
     </rdfs:class>
     <rdfs:class rdf:about="&bts;Category">
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Group_technology
+        </rdfs:comment>
     </rdfs:class>
     <rdfs:class rdf:about="&bts;Technology">
         <rdfs:comment>
@@ -76,5 +89,7 @@
     
     <rdfs:class rdf:about="&bts;Description" >
     </rdfs:class>
+    
+    
     
 </rdf:RDF>
