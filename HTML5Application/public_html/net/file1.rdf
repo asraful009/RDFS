@@ -1,0 +1,5 @@
+<?xml version='1.0'?>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+ xmlns:a='http://www.example.org/'>
+<rdf:Seq rdf:ID='idA'><rdf:li rdf:resource='http://foo.bar.org/' /></rdf:Seq>
+</rdf:RDF>

@@ -14,7 +14,7 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:base="http://biotechservices-bd.com/"
+    xmlns="http://biotechservices-bd.com/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:dbo="http://dbpedia.org/ontology/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -93,8 +93,8 @@
     
     
     <rdf:Property rdf:about="&bts;Specification">
-        <rdfs:domain rdf:resource="&bts;Analyser"/>
-        <rdfs:range rdf:resource="#Specification"/>
+        <rdfs:domain rdf:resource="#Specification"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Property>
     
     <rdf:Property rdf:about="&bts;SimilarAnalyser">
@@ -103,8 +103,8 @@
     </rdf:Property>
     
     <rdf:Property rdf:about="&bts;Technology">
-        <rdfs:domain rdf:resource="&bts;Analyser"/>
-        <rdfs:range rdf:resource="&bts;"/> ------------
+        <rdfs:domain rdf:resource="#Technology"/>
+        <rdfs:range  rdf:resource="&rdfs;Literal"/> 
     </rdf:Property>
     
     <!-- Specification Enumeration -->
@@ -201,6 +201,19 @@
             <rdf:Description rdf:about="#Weight_KG"></rdf:Description>
             -->
         </owl:oneOf>
+    </rdfs:Class>
+    <!-- Property -->
+    
+    <!-- Technology Enumeration -->
+    <rdfs:Class rdf:ID="Technology">
+        <rdfs:comment>All Specification of Analyser</rdfs:comment>
+        <owl:allValuesFrom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Descrption"></rdf:Description>
+            <rdf:Description rdf:about="#Method"></rdf:Description>
+            <rdf:Description rdf:about="#License"></rdf:Description>
+            <rdf:Description rdf:about="#"></rdf:Description>
+            <rdf:Description rdf:about="#Media"></rdf:Description>            
+        </owl:allValuesFrom>
     </rdfs:Class>
     <!-- Property -->
     
