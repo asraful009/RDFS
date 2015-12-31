@@ -88,33 +88,64 @@
     <!-- client -->
     
     <rdfs:Class rdf:about="&bts;Description" >
-        <rdfs:subClassOf rdf:resource="&dc;description" />
+        
     </rdfs:Class>
-    <!-- Property  -->
     
-    <!-- Analyser to specification  -->
-    <rdf:Property rdf:about="&bts;AnlyserSpecifications">
-        <rdfs:domain rdf:resource="&bts;Analyser"/>
-        <rdfs:range rdf:resource="&bts;Specifications"/>
-    </rdf:Property>
-    <!-- Specification domain range set -->
-     <rdf:Property rdf:about="&bts;Specifications">
+    
+    <rdf:Property rdf:about="&bts;Specification">
         <rdfs:domain rdf:resource="#Specification"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Property>
+    
+    <rdf:Property rdf:about="&bts;SimilarAnalyser">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Analyser"/>
+    </rdf:Property>
+    
+    <rdf:Property rdf:about="&bts;Technology">
+        <rdfs:domain rdf:resource="#Technology"/>
+        <rdfs:range  rdf:resource="&rdfs;Literal"/> 
     </rdf:Property>
     
     <!-- Specification Enumeration -->
     <rdfs:Class rdf:ID="Specification">
         <rdfs:comment>All Specification of Analyser</rdfs:comment>
-        <rdf:Alt rdf:parseType="Collection">
-            <rdf:Description rdf:about="#CoreUnitAnalytics"></rdf:Description> 
+        <owl:oneOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#AdditionalSoftware"></rdf:Description>
+            <rdf:Description rdf:about="#AnalysisTime"></rdf:Description>
+            <rdf:Description rdf:about="#AutomationCapabilities"></rdf:Description>
+            <rdf:Description rdf:about="#CalculatedParameters"></rdf:Description>
+            <rdf:Description rdf:about="#CalibrationMethods"></rdf:Description>
+            <rdf:Description rdf:about="#CalibratorQC_Input"></rdf:Description>
+            <!--
+            <rdf:Description rdf:about="#Computer"></rdf:Description>
+            <rdf:Description rdf:about="#ControlUnit"></rdf:Description>
+            <rdf:Description rdf:about="#CoreUnitAnalytics"></rdf:Description>
+            <rdf:Description rdf:about="#DataProcessing"></rdf:Description>
+            <rdf:Description rdf:about="#DataStation"></rdf:Description>
             <rdf:Description rdf:about="#DataStorage"></rdf:Description>
+            <rdf:Description rdf:about="#Detection"></rdf:Description>
+            <rdf:Description rdf:about="#Detector"></rdf:Description>
             <rdf:Description rdf:about="#Dimensions"></rdf:Description>
+            <rdf:Description rdf:about="#DynamicRange"></rdf:Description>
+            <rdf:Description rdf:about="#ElectricalPowerRequirements"></rdf:Description>
+            <rdf:Description rdf:about="#ElectricalRequirements"></rdf:Description>
+            <rdf:Description rdf:about="#Electrodes"></rdf:Description>
+            <rdf:Description rdf:about="#ElectrolyteParameters"></rdf:Description>
+            <rdf:Description rdf:about="#Excitation"></rdf:Description>
+            <rdf:Description rdf:about="#ExternalPrinter"></rdf:Description>
+            <rdf:Description rdf:about="#FilterSecifications"></rdf:Description>
+            <rdf:Description rdf:about="#FlaggingParameters"></rdf:Description>
+            <rdf:Description rdf:about="#HemoglobinParameters"></rdf:Description>
             <rdf:Description rdf:about="#HostInterfaces"></rdf:Description>
+            <rdf:Description rdf:about="#Incubator"></rdf:Description>
+            <rdf:Description rdf:about="#Infi"></rdf:Description>
             <rdf:Description rdf:about="#MatrixPlot"></rdf:Description>
             <rdf:Description rdf:about="#MeasuredParameters"></rdf:Description>
+            <rdf:Description rdf:about="#MeasurementPrinciples"></rdf:Description>
             <rdf:Description rdf:about="#MinSampleVolume"></rdf:Description>
             <rdf:Description rdf:about="#NumOfChannels"></rdf:Description>
+            <rdf:Description rdf:about="#NumOfColorDetections"></rdf:Description>
             <rdf:Description rdf:about="#NumOfModuleCombinations"></rdf:Description>
             <rdf:Description rdf:about="#OnboardCPU"></rdf:Description>
             <rdf:Description rdf:about="#OpenSystem"></rdf:Description>
@@ -150,59 +181,39 @@
             <rdf:Description rdf:about="#Sensor"></rdf:Description>
             <rdf:Description rdf:about="#StandardCurve"></rdf:Description>
             <rdf:Description rdf:about="#StartUpTime"></rdf:Description>
+            <rdf:Description rdf:about="#System"></rdf:Description>
+            <rdf:Description rdf:about="#SystemComponents"></rdf:Description>
+            <rdf:Description rdf:about="#SystemInterfaces"></rdf:Description>
             <rdf:Description rdf:about="#TemperatureAccuracy"></rdf:Description>
             <rdf:Description rdf:about="#TemperatureControl"></rdf:Description>
             <rdf:Description rdf:about="#TemperatureControlRange"></rdf:Description>
             <rdf:Description rdf:about="#TestCertificate"></rdf:Description>
             <rdf:Description rdf:about="#TestMethods"></rdf:Description>
             <rdf:Description rdf:about="#TestThroughput"></rdf:Description>
+            <rdf:Description rdf:about="#ThermalCyclerSegments"></rdf:Description>
+            <rdf:Description rdf:about="#Throughput"></rdf:Description>
             <rdf:Description rdf:about="#ThroughputSingleConnection"></rdf:Description>
             <rdf:Description rdf:about="#ThroughputTwinConnection"></rdf:Description>
+            <rdf:Description rdf:about="#Time1stResult"></rdf:Description>
             <rdf:Description rdf:about="#TypeOfModules"></rdf:Description>
+            <rdf:Description rdf:about="#UtilityChannelDefinitions"></rdf:Description>
             <rdf:Description rdf:about="#WaterRequirements"></rdf:Description>
             <rdf:Description rdf:about="#Weight_KG"></rdf:Description>
-        </rdf:Alt>
-    </rdfs:Class>    
-    <!-- End Analyser to specification  -->
+            -->
+        </owl:oneOf>
+    </rdfs:Class>
+    <!-- Property -->
     
-    <!-- Analyser to Technologys  -->
-    <rdf:Property rdf:about="&bts;AnlyserTechnologys">
-        <rdfs:domain rdf:resource="&bts;Analyser"/>
-        <rdfs:range rdf:resource="&bts;Technologys"/>
-    </rdf:Property>
-    <!-- Technology domain range set -->
-    <rdf:Property rdf:about="&bts;Technologys">
-        <rdfs:domain rdf:resource="#Technology"/>
-        <rdfs:range  rdf:resource="&rdfs;Literal"/> 
-    </rdf:Property>
     <!-- Technology Enumeration -->
     <rdfs:Class rdf:ID="Technology">
         <rdfs:comment>All Specification of Analyser</rdfs:comment>
-        <rdf:Seq rdf:parseType="Collection">
-            <rdf:Description rdf:resource="#Founder"></rdf:Description>
-            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>
-        </rdf:Seq>
-    </rdfs:Class>
-    <!-- End Analyser to Technologys  -->
-   
-    <!-- Similar Analysers  -->    
-    <rdf:Property rdf:about="&bts;SimilarAnalysers">
-        <rdfs:domain rdf:resource="&bts;Analyser"/>
-        <rdfs:range rdf:resource="&bts;Analyser"/>
-    </rdf:Property>
-    <!-- end Similar Analysers  -->
-
-      
-    <!-- Founder Enumeration -->
-    <rdfs:Class rdf:ID="Founder">
-        <rdfs:comment>Founder of a Company or Technology</rdfs:comment>
-        <rdf:Seq rdf:parseType="Collection">
-            <rdf:Description rdf:resource="&dc;publisher"></rdf:Description>
-            <rdf:Description rdf:resource="&dc;description"></rdf:Description>
-            <rdf:Description rdf:resource="&dc;ateAccepted"></rdf:Description>
+        <owl:allValuesFrom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#Descrption"></rdf:Description>
+            <rdf:Description rdf:about="#Method"></rdf:Description>
             <rdf:Description rdf:about="#License"></rdf:Description>
-            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>            
-        </rdf:Seq>
+            <rdf:Description rdf:about="#"></rdf:Description>
+            <rdf:Description rdf:about="#Media"></rdf:Description>            
+        </owl:allValuesFrom>
     </rdfs:Class>
     <!-- Property -->
     
