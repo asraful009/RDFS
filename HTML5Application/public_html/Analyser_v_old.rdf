@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+ <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+ <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+ <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+ <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+ <!ENTITY bts "http://biotechservices-bd.com/" >
+ <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+ <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+ <!ENTITY dbo "http://dbpedia.org/ontology/" >
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns="http://biotechservices-bd.com/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dbo="http://dbpedia.org/ontology/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    >
+    
+    <!-- creator -->
+    <owl:Ontology rdf:about="&bts;">
+        <dc:creator rdf:datatype="&xsd;string">
+            Asraful Islam
+        </dc:creator>
+    </owl:Ontology>
+    
+    <!-- creator -->
+    
+    <!--analyser -->
+    <rdfs:Class rdf:about="&bts;Analyser" >
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Automated_analyser
+        </rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Model">
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Category">
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Group_technology
+        </rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Technology">
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Health_technology
+        </rdfs:comment>
+    </rdfs:Class>
+    
+    <!--analyser -->
+    
+    <!-- company -->
+    <rdfs:Class rdf:about="&bts;Manufactory">
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Industry
+        </rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;MarketingBy" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Marketing
+        </rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Distributor" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:subClassOf rdf:resource="&bts;MarketingBy" />
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Marketing
+        </rdfs:comment>
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Trading_company
+        </rdfs:comment>
+    </rdfs:Class>
+    
+    <!-- company -->
+    
+    
+    
+    <!-- client -->
+    <rdfs:Class rdf:about="&bts;Customer" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment>
+            https://en.wikipedia.org/wiki/Customer
+        </rdfs:comment>
+    </rdfs:Class>
+    <!-- client -->
+    
+    <rdfs:Class rdf:about="&bts;Description" >
+        <rdfs:subClassOf rdf:resource="&dc;description" />
+    </rdfs:Class>
+    <!-- Property  -->
+    
+    <!-- Analyser to specification  -->
+    <rdf:Property rdf:about="&bts;AnlyserSpecifications">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Specifications"/>
+    </rdf:Property>
+    <!-- Specification domain range set -->
+     <rdf:Property rdf:about="&bts;Specifications">
+        <rdfs:domain rdf:resource="#Specification"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Property>
+    
+    <!-- Specification Enumeration -->
+    <rdfs:Class rdf:ID="Specification">
+        <rdfs:comment>All Specification of Analyser</rdfs:comment>
+        <rdf:Alt rdf:parseType="Collection">
+            <rdf:Description rdf:about="#CoreUnitAnalytics"></rdf:Description> 
+            <rdf:Description rdf:about="#DataStorage"></rdf:Description>
+            <rdf:Description rdf:about="#Dimensions"></rdf:Description>
+            <rdf:Description rdf:about="#HostInterfaces"></rdf:Description>
+            <rdf:Description rdf:about="#MatrixPlot"></rdf:Description>
+            <rdf:Description rdf:about="#MeasuredParameters"></rdf:Description>
+            <rdf:Description rdf:about="#MinSampleVolume"></rdf:Description>
+            <rdf:Description rdf:about="#NumOfChannels"></rdf:Description>
+            <rdf:Description rdf:about="#NumOfModuleCombinations"></rdf:Description>
+            <rdf:Description rdf:about="#OnboardCPU"></rdf:Description>
+            <rdf:Description rdf:about="#OpenSystem"></rdf:Description>
+            <rdf:Description rdf:about="#OperatingConditions"></rdf:Description>
+            <rdf:Description rdf:about="#OperatingParameters"></rdf:Description>
+            <rdf:Description rdf:about="#ParameterName"></rdf:Description>
+            <rdf:Description rdf:about="#Photometer"></rdf:Description>
+            <rdf:Description rdf:about="#PossibleWorkflows"></rdf:Description>
+            <rdf:Description rdf:about="#PreInstalledSoftware"></rdf:Description>
+            <rdf:Description rdf:about="#PrinterInterfaces"></rdf:Description>
+            <rdf:Description rdf:about="#ProgrammableParameters"></rdf:Description>
+            <rdf:Description rdf:about="#ProgramsAndDisposables"></rdf:Description>
+            <rdf:Description rdf:about="#QCmethods"></rdf:Description>
+            <rdf:Description rdf:about="#ReactionCells"></rdf:Description>
+            <rdf:Description rdf:about="#ReactionTube"></rdf:Description>
+            <rdf:Description rdf:about="#ReactionTubeHolder"></rdf:Description>
+            <rdf:Description rdf:about="#ReactionVolumes"></rdf:Description>
+            <rdf:Description rdf:about="#ReagentConsumption"></rdf:Description>
+            <rdf:Description rdf:about="#Reagents"></rdf:Description>
+            <rdf:Description rdf:about="#RegulatoryRequirements"></rdf:Description>
+            <rdf:Description rdf:about="#RerunReflexFunction"></rdf:Description>
+            <rdf:Description rdf:about="#RunTime"></rdf:Description>
+            <rdf:Description rdf:about="#SampleBarcodeTypes"></rdf:Description>
+            <rdf:Description rdf:about="#SampleClotDetection"></rdf:Description>
+            <rdf:Description rdf:about="#SampleContainerTypes"></rdf:Description>
+            <rdf:Description rdf:about="#SampleDilution"></rdf:Description>
+            <rdf:Description rdf:about="#SampleInputOutput"></rdf:Description>
+            <rdf:Description rdf:about="#SampleMaterial"></rdf:Description>
+            <rdf:Description rdf:about="#SampleNumbers"></rdf:Description>
+            <rdf:Description rdf:about="#SampleTypes"></rdf:Description>
+            <rdf:Description rdf:about="#SampleVolume"></rdf:Description>
+            <rdf:Description rdf:about="#Scattergrams"></rdf:Description>
+            <rdf:Description rdf:about="#Sensor"></rdf:Description>
+            <rdf:Description rdf:about="#StandardCurve"></rdf:Description>
+            <rdf:Description rdf:about="#StartUpTime"></rdf:Description>
+            <rdf:Description rdf:about="#TemperatureAccuracy"></rdf:Description>
+            <rdf:Description rdf:about="#TemperatureControl"></rdf:Description>
+            <rdf:Description rdf:about="#TemperatureControlRange"></rdf:Description>
+            <rdf:Description rdf:about="#TestCertificate"></rdf:Description>
+            <rdf:Description rdf:about="#TestMethods"></rdf:Description>
+            <rdf:Description rdf:about="#TestThroughput"></rdf:Description>
+            <rdf:Description rdf:about="#ThroughputSingleConnection"></rdf:Description>
+            <rdf:Description rdf:about="#ThroughputTwinConnection"></rdf:Description>
+            <rdf:Description rdf:about="#TypeOfModules"></rdf:Description>
+            <rdf:Description rdf:about="#WaterRequirements"></rdf:Description>
+            <rdf:Description rdf:about="#Weight_KG"></rdf:Description>
+        </rdf:Alt>
+    </rdfs:Class>    
+    <!-- End Analyser to specification  -->
+    
+    <!-- Analyser to Technologys  -->
+    <rdf:Property rdf:about="&bts;AnlyserTechnologys">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Technologys"/>
+    </rdf:Property>
+    <!-- Technology domain range set -->
+    <rdf:Property rdf:about="&bts;Technologys">
+        <rdfs:domain rdf:resource="#Technology"/>
+        <rdfs:range  rdf:resource="&rdfs;Literal"/> 
+    </rdf:Property>
+    <!-- Technology Enumeration -->
+    <rdfs:Class rdf:ID="Technology">
+        <rdfs:comment>All Specification of Analyser</rdfs:comment>
+        <rdf:Seq rdf:parseType="Collection">
+            <rdf:Description rdf:resource="#Founder"></rdf:Description>
+            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>
+        </rdf:Seq>
+    </rdfs:Class>
+    <!-- End Analyser to Technologys  -->
+   
+    <!-- Similar Analysers  -->    
+    <rdf:Property rdf:about="&bts;SimilarAnalysers">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Analyser"/>
+    </rdf:Property>
+    <!-- end Similar Analysers  -->
+
+      
+    <!-- Founder Enumeration -->
+    <rdfs:Class rdf:ID="Founder">
+        <rdfs:comment>Founder of a Company or Technology</rdfs:comment>
+        <rdf:Seq rdf:parseType="Collection">
+            <rdf:class rdf:about="publisher">
+				<rdf:subClassOf rdf:resource="&dc;publisher" />
+			</rdf:class>
+            <rdf:Description rdf:resource="&dc;description"></rdf:Description>
+            <rdf:Description rdf:resource="&dc;ateAccepted"></rdf:Description>
+            <rdf:Description rdf:about="#License"></rdf:Description>
+            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>            
+        </rdf:Seq>
+    </rdfs:Class>
+    <!-- Property -->
+    
+</rdf:RDF>
