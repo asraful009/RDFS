@@ -103,66 +103,139 @@
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </rdf:Property>
     
-    <!-- Specification Enumeration -->
-    <rdfs:Class rdf:ID="Specification">
-        <rdfs:comment>All Specification of Analyser</rdfs:comment>
-        <rdf:Alt rdf:parseType="Collection">
-            <rdf:Description rdf:about="#CoreUnitAnalytics"></rdf:Description> 
-            <rdf:Description rdf:about="#DataStorage"></rdf:Description>
-            <rdf:Description rdf:about="#Dimensions"></rdf:Description>
-            <rdf:Description rdf:about="#HostInterfaces"></rdf:Description>
-            <rdf:Description rdf:about="#MatrixPlot"></rdf:Description>
-            <rdf:Description rdf:about="#MeasuredParameters"></rdf:Description>
-            <rdf:Description rdf:about="#MinSampleVolume"></rdf:Description>
-            <rdf:Description rdf:about="#NumOfChannels"></rdf:Description>
-            <rdf:Description rdf:about="#NumOfModuleCombinations"></rdf:Description>
-            <rdf:Description rdf:about="#OnboardCPU"></rdf:Description>
-            <rdf:Description rdf:about="#OpenSystem"></rdf:Description>
-            <rdf:Description rdf:about="#OperatingConditions"></rdf:Description>
-            <rdf:Description rdf:about="#OperatingParameters"></rdf:Description>
-            <rdf:Description rdf:about="#ParameterName"></rdf:Description>
-            <rdf:Description rdf:about="#Photometer"></rdf:Description>
-            <rdf:Description rdf:about="#PossibleWorkflows"></rdf:Description>
-            <rdf:Description rdf:about="#PreInstalledSoftware"></rdf:Description>
-            <rdf:Description rdf:about="#PrinterInterfaces"></rdf:Description>
-            <rdf:Description rdf:about="#ProgrammableParameters"></rdf:Description>
-            <rdf:Description rdf:about="#ProgramsAndDisposables"></rdf:Description>
-            <rdf:Description rdf:about="#QCmethods"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionCells"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionTube"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionTubeHolder"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionVolumes"></rdf:Description>
-            <rdf:Description rdf:about="#ReagentConsumption"></rdf:Description>
-            <rdf:Description rdf:about="#Reagents"></rdf:Description>
-            <rdf:Description rdf:about="#RegulatoryRequirements"></rdf:Description>
-            <rdf:Description rdf:about="#RerunReflexFunction"></rdf:Description>
-            <rdf:Description rdf:about="#RunTime"></rdf:Description>
-            <rdf:Description rdf:about="#SampleBarcodeTypes"></rdf:Description>
-            <rdf:Description rdf:about="#SampleClotDetection"></rdf:Description>
-            <rdf:Description rdf:about="#SampleContainerTypes"></rdf:Description>
-            <rdf:Description rdf:about="#SampleDilution"></rdf:Description>
-            <rdf:Description rdf:about="#SampleInputOutput"></rdf:Description>
-            <rdf:Description rdf:about="#SampleMaterial"></rdf:Description>
-            <rdf:Description rdf:about="#SampleNumbers"></rdf:Description>
-            <rdf:Description rdf:about="#SampleTypes"></rdf:Description>
-            <rdf:Description rdf:about="#SampleVolume"></rdf:Description>
-            <rdf:Description rdf:about="#Scattergrams"></rdf:Description>
-            <rdf:Description rdf:about="#Sensor"></rdf:Description>
-            <rdf:Description rdf:about="#StandardCurve"></rdf:Description>
-            <rdf:Description rdf:about="#StartUpTime"></rdf:Description>
-            <rdf:Description rdf:about="#TemperatureAccuracy"></rdf:Description>
-            <rdf:Description rdf:about="#TemperatureControl"></rdf:Description>
-            <rdf:Description rdf:about="#TemperatureControlRange"></rdf:Description>
-            <rdf:Description rdf:about="#TestCertificate"></rdf:Description>
-            <rdf:Description rdf:about="#TestMethods"></rdf:Description>
-            <rdf:Description rdf:about="#TestThroughput"></rdf:Description>
-            <rdf:Description rdf:about="#ThroughputSingleConnection"></rdf:Description>
-            <rdf:Description rdf:about="#ThroughputTwinConnection"></rdf:Description>
-            <rdf:Description rdf:about="#TypeOfModules"></rdf:Description>
-            <rdf:Description rdf:about="#WaterRequirements"></rdf:Description>
-            <rdf:Description rdf:about="#Weight_KG"></rdf:Description>
-        </rdf:Alt>
-    </rdfs:Class>    
+
+    <rdf:Property rdf:about="&bts;Specifications#Analysis_Time">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;time"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#AutomationCapabilities">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#CalibrationMethods">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;DataType#Technology"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#CalibratorQC_Input">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#Certificates">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;DataType#Certificate"/>
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#hasComputer">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#DataStorage">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#Dimensions">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;DataType#Dimension"/>
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#ElectricalPowerRequirements">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#hasElectrodes">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#hasExternalPrinter">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#FilterSecifications">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;DataType#Technology"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#HostInterfaces">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;DataType#Device_Peripheral"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#hasMatrixPlot">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#MeasuredParameters">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#MeasuringRange">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;DataType#Range"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#SampleVolume">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Number of channels"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Number of Color Detections"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Number of module combinations"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#On board control unit"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Open system"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Operating conditions"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Operating Parameters"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Parameter’s Name"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Photometer"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Physical dimensions"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Possible Workflows"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Pre-installed software"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Printer Interfaces"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Programmable parameters"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Programs and Disposables"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#QC methods"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Reaction cells"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Reaction Tube"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Reaction Tube Holder"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Reaction volumes"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Reagent Consumption"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Reagents"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Regulatory requirements"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Rerun/reflex function"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Run time"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample barcode types"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample clot detection"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample container types"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample data base"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample dilution"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample input/output"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample material"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample numbers"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample types"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sample Volume"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Samples"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Scattergrams"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Sodium Sensor"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Software"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Special Features & Benefits:"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Standard Curve"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Start up Time"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#System"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#System components"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#System interfaces"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Technology"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Temperature Accuracy"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Temperature Control"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Temperature Control Range"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Test certificate"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Test methods"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Test throughput"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Thermal Cycler Segments"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Throughput"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Throughput for Single Connection"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Throughput for Twin Connection"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Time to first result"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Type of modules"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Utility Channel Definitions"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Utility Channel Definitions"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+concat("<rdf:Property rdf:about=\"&bts;Specifications#",`NAME`,"\"><rdfs:domain rdf:resource=\"&bts;Analyser\"/>","<rdfs:range rdf:resource=\"&rdfs;Literal\"/></rdf:Property>")
+ 
+<rdf:Property rdf:about="&bts;Specifications#Water/waste requirements"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
+<rdf:Property rdf:about="&bts;Specifications#Weight(KG)"><rdfs:domain rdf:resource="&bts;Analyser"/><rdfs:range rdf:resource="&rdfs;Literal"/></rdf:Property>
     <!-- End Analyser to specification  -->
     
     <!-- Analyser to Technologys  -->
@@ -202,10 +275,67 @@
 			</rdf:class>
             <rdf:Description rdf:resource="&dc;description"></rdf:Description>
             <rdf:Description rdf:resource="&dc;ateAccepted"></rdf:Description>
-            <rdf:Description rdf:about="#License"></rdf:Description>
+            <rdf:Description rdf:about="#License">
+                <rdf:subClassOf rdf:resource="&bts;DataType#Certificate" />
+            </rdf:Description>
             <rdf:Description rdf:resource="&dbo;media"></rdf:Description>            
         </rdf:Seq>
     </rdfs:Class>
     <!-- Property -->
+    
+    
+    <!-- xsd Data Type -->
+    <rdfs:Datatype rdf:about="&xsd;string"/>
+    <!-- date -->
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    <rdfs:Datatype rdf:about="&xsd;dateTime"/>
+    <rdfs:Datatype rdf:about="&xsd;time"/>
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    <!-- Numeric -->
+    <rdfs:Datatype rdf:about="&xsd;byte"/>
+    <rdfs:Datatype rdf:about="&xsd;decimal"/>
+    <rdfs:Datatype rdf:about="&xsd;integer"/>
+    <rdfs:Datatype rdf:about="&xsd;long"/>
+    <rdfs:Datatype rdf:about="&xsd;double"/>
+    <!-- Miscellaneous -->
+    <rdfs:Datatype rdf:about="&xsd;anyURI"/>
+    <rdfs:Datatype rdf:about="&xsd;boolean"/>
+    <rdfs:Datatype rdf:about="&xsd;hexBinary"/>
+    <rdfs:Datatype rdf:about="&xsd;base64Binaryy"/>
+    <!-- bts datatype -->
+    <rdfs:Datatype rdf:about="&bts;DataType#Technology">
+        <rdfs:subClassOf rdf:resource="#Technology"/>
+        <rdfs:label>Technology</rdfs:label>
+        <rdfs:comment>Technology</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Certificate">
+        <rdfs:subClassOf rdf:resource="&xsd;anyURI"/>
+        <rdfs:label>Certificate</rdfs:label>
+        <rdfs:comment>Certificate</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Dimension">
+        <rdfs:subClassOf rdf:resource="&xsd;double"/>
+        <rdfs:label>Certificate</rdfs:label>
+        <rdfs:comment>Certificate</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Device_Peripheral">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Peripheral"/>
+        <rdfs:label>Certificate</rdfs:label>
+        <rdfs:comment>Certificate</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Class rdf:about="&bts;DataType#Range">
+        <rdfs:subClassOf rdf:resource="&xsd;decimal" />
+    </rdfs:Class>
+    <rdf:Property rdf:about="&bts;DataType#RangeMin">
+        <rdfs:domain rdf:resource="&bts;DataType#Range"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;DataType#RangeMax">
+        <rdfs:domain rdf:resource="&bts;DataType#Range"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <!-- End xsd Data Type -->
+    
+    
     
 </rdf:RDF>
