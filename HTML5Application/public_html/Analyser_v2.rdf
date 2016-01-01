@@ -106,55 +106,7 @@
     <!-- Specification Enumeration -->
     <rdfs:Class rdf:ID="Specification">
         <rdfs:comment>All Specification of Analyser</rdfs:comment>
-        <rdf:Alt rdf:parseType="Collection">
-            <rdf:Description rdf:about="#CoreUnitAnalytics"></rdf:Description> 
-            <rdf:Description rdf:about="#DataStorage"></rdf:Description>
-            <rdf:Description rdf:about="#Dimensions"></rdf:Description>
-            <rdf:Description rdf:about="#HostInterfaces"></rdf:Description>
-            <rdf:Description rdf:about="#MatrixPlot"></rdf:Description>
-            <rdf:Description rdf:about="#MeasuredParameters"></rdf:Description>
-            <rdf:Description rdf:about="#MinSampleVolume"></rdf:Description>
-            <rdf:Description rdf:about="#NumOfChannels"></rdf:Description>
-            <rdf:Description rdf:about="#NumOfModuleCombinations"></rdf:Description>
-            <rdf:Description rdf:about="#OnboardCPU"></rdf:Description>
-            <rdf:Description rdf:about="#OpenSystem"></rdf:Description>
-            <rdf:Description rdf:about="#OperatingConditions"></rdf:Description>
-            <rdf:Description rdf:about="#OperatingParameters"></rdf:Description>
-            <rdf:Description rdf:about="#ParameterName"></rdf:Description>
-            <rdf:Description rdf:about="#Photometer"></rdf:Description>
-            <rdf:Description rdf:about="#PossibleWorkflows"></rdf:Description>
-            <rdf:Description rdf:about="#PreInstalledSoftware"></rdf:Description>
-            <rdf:Description rdf:about="#PrinterInterfaces"></rdf:Description>
-            <rdf:Description rdf:about="#ProgrammableParameters"></rdf:Description>
-            <rdf:Description rdf:about="#ProgramsAndDisposables"></rdf:Description>
-            <rdf:Description rdf:about="#QCmethods"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionCells"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionTube"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionTubeHolder"></rdf:Description>
-            <rdf:Description rdf:about="#ReactionVolumes"></rdf:Description>
-            <rdf:Description rdf:about="#ReagentConsumption"></rdf:Description>
-            <rdf:Description rdf:about="#Reagents"></rdf:Description>
-            <rdf:Description rdf:about="#RegulatoryRequirements"></rdf:Description>
-            <rdf:Description rdf:about="#RerunReflexFunction"></rdf:Description>
-            <rdf:Description rdf:about="#RunTime"></rdf:Description>
-            <rdf:Description rdf:about="#SampleBarcodeTypes"></rdf:Description>
-            <rdf:Description rdf:about="#SampleClotDetection"></rdf:Description>
-            <rdf:Description rdf:about="#SampleContainerTypes"></rdf:Description>
-            <rdf:Description rdf:about="#SampleDilution"></rdf:Description>
-            <rdf:Description rdf:about="#SampleInputOutput"></rdf:Description>
-            <rdf:Description rdf:about="#SampleMaterial"></rdf:Description>
-            <rdf:Description rdf:about="#SampleNumbers"></rdf:Description>
-            <rdf:Description rdf:about="#SampleTypes"></rdf:Description>
-            <rdf:Description rdf:about="#SampleVolume"></rdf:Description>
-            <rdf:Description rdf:about="#Scattergrams"></rdf:Description>
-            <rdf:Description rdf:about="#Sensor"></rdf:Description>
-            <rdf:Description rdf:about="#StandardCurve"></rdf:Description>
-            <rdf:Description rdf:about="#StartUpTime"></rdf:Description>
-            <rdf:Description rdf:about="#TemperatureAccuracy"></rdf:Description>
-            <rdf:Description rdf:about="#TemperatureControl"></rdf:Description>
-            <rdf:Description rdf:about="#TemperatureControlRange"></rdf:Description>
-            <rdf:Description rdf:about="#TestCertificate"></rdf:Description>
-            <rdf:Description rdf:about="#TestMethods"></rdf:Description>
+        <rdf:Alt rdf:parseType="Collection">           
             <rdf:Description rdf:about="#TestThroughput"></rdf:Description>
             <rdf:Description rdf:about="#ThroughputSingleConnection"></rdf:Description>
             <rdf:Description rdf:about="#ThroughputTwinConnection"></rdf:Description>
@@ -201,7 +153,7 @@
 				<rdf:subClassOf rdf:resource="&dc;publisher" />
 			</rdf:class>
             <rdf:Description rdf:resource="&dc;description"></rdf:Description>
-            <rdf:Description rdf:resource="&dc;ateAccepted"></rdf:Description>
+            <rdf:Description rdf:resource="&dc;dateAccepted"></rdf:Description>
             <rdf:Description rdf:about="#License"></rdf:Description>
             <rdf:Description rdf:resource="&dbo;media"></rdf:Description>            
         </rdf:Seq>
