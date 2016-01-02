@@ -267,7 +267,25 @@
     <!-- Property -->
     
     
-    <!-- xsd Data Type -->
+    <!-- Data Type -->
+    <!-- DataType Class -->
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Length" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    
+    <!-- DataType Class -->    
     <rdfs:Datatype rdf:about="&xsd;string"/>
     <!-- date -->
     <rdfs:Datatype rdf:about="&xsd;date"/>
@@ -292,9 +310,9 @@
         <rdfs:comment>Technology</rdfs:comment>
     </rdfs:Datatype>
     <rdfs:Datatype rdf:about="&bts;DataType#Certificate">
-        <rdfs:subClassOf rdf:resource="&xsd;anyURI"/>
+        <rdfs:subClassOf rdf:resource="&dc;Policy"/>
         <rdfs:label>Certificate</rdfs:label>
-        <rdfs:comment>Certificate</rdfs:comment>
+        <rdfs:comment>Agreement Certificate</rdfs:comment>
     </rdfs:Datatype>
     <rdfs:Datatype rdf:about="&bts;DataType#Dimension">
         <rdfs:subClassOf rdf:resource="&xsd;double"/>
