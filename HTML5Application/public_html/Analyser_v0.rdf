@@ -273,57 +273,57 @@
     <!-- Category Test group-->
     <rdf:Property rdf:about="&bts;medicalTestList#Biochemistry">
         <rdfs:domain rdf:resource="&bts;Biochemistry"/>
-        <rdfs:range><rdf:resource>Glucose</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>GTT</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Globulin</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>HBA1C</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Potassium (K+)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Procalcitonin</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Protein S</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Random (RBS)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>TROPONIN - I</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Total Protein</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Transferring</rdf:resource></rdfs:range>        
+        <rdfs:range>Glucose</rdfs:range>
+        <rdfs:range>GTT</rdfs:range>
+        <rdfs:range>Globulin</rdfs:range>
+        <rdfs:range>HBA1C</rdfs:range>
+        <rdfs:range>Potassium (K+)</rdfs:range>
+        <rdfs:range>Procalcitonin</rdfs:range>
+        <rdfs:range>Protein S</rdfs:range>
+        <rdfs:range>Random (RBS)</rdfs:range>
+        <rdfs:range>TROPONIN - I</rdfs:range>
+        <rdfs:range>Total Protein</rdfs:range>
+        <rdfs:range>Transferring</rdfs:range>        
     </rdf:Property>
     
     <rdf:Property rdf:about="&bts;medicalTestList#Haematology">
         <rdfs:domain rdf:resource="&bts;Haematology"/>
-        <rdfs:range><rdf:resource>APTT</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>BT</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Blood Film (PBF)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>CBC</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>CT</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>DC</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>ESR</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Fibrinogen</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Haemoglobin Electrophoresis</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Hb%</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Platelet count</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Prothrombin Time (INR)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>RBC Parameters</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Reticulocyte count</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Rh Antibody Titre</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Sputum Eosinophil</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>TC</rdf:resource></rdfs:range>
+        <rdfs:range>APTT</rdfs:range>
+        <rdfs:range>BT</rdfs:range>
+        <rdfs:range>Blood Film (PBF)</rdfs:range>
+        <rdfs:range>CBC</rdfs:range>
+        <rdfs:range>CT</rdfs:range>
+        <rdfs:range>DC</rdfs:range>
+        <rdfs:range>ESR</rdfs:range>
+        <rdfs:range>Fibrinogen</rdfs:range>
+        <rdfs:range>Haemoglobin Electrophoresis</rdfs:range>
+        <rdfs:range>Hb%</rdfs:range>
+        <rdfs:range>Platelet count</rdfs:range>
+        <rdfs:range>Prothrombin Time (INR)</rdfs:range>
+        <rdfs:range>RBC Parameters</rdfs:range>
+        <rdfs:range>Reticulocyte count</rdfs:range>
+        <rdfs:range>Rh Antibody Titre</rdfs:range>
+        <rdfs:range>Sputum Eosinophil</rdfs:range>
+        <rdfs:range>TC</rdfs:range>
     </rdf:Property>    
     
     <rdf:Property rdf:about="&bts;medicalTestList#Immunology">
         <rdfs:domain rdf:resource="&bts;Immunology"/>
-        <rdfs:range><rdf:resource>Alpha Feto Protein (AFP)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Anti TB IgM</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Anti TP Strip Test (Syphilis)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Anti Tpo(Anti-Thy.per.Ab)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Anti-TB IgA</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Antibody HSV IgG</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Antibody HSV IgM</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>CFT for Filaria</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>CFT for Kala-Azar</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>IgM  for Rubela</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>Mantoux Test (MT)</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>S. IgA</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>S. IgE</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>S. IgG</rdf:resource></rdfs:range>
-        <rdfs:range><rdf:resource>S. IgM</rdf:resource></rdfs:range>
+        <rdfs:range>Alpha Feto Protein (AFP)</rdfs:range>
+        <rdfs:range>Anti TB IgM</rdfs:range>
+        <rdfs:range>Anti TP Strip Test (Syphilis)</rdfs:range>
+        <rdfs:range>Anti Tpo(Anti-Thy.per.Ab)</rdfs:range>
+        <rdfs:range>Anti-TB IgA</rdfs:range>
+        <rdfs:range>Antibody HSV IgG</rdfs:range>
+        <rdfs:range>Antibody HSV IgM</rdfs:range>
+        <rdfs:range>CFT for Filaria</rdfs:range>
+        <rdfs:range>CFT for Kala-Azar</rdfs:range>
+        <rdfs:range>IgM  for Rubela</rdfs:range>
+        <rdfs:range>Mantoux Test (MT)</rdfs:range>
+        <rdfs:range>S. IgA</rdfs:range>
+        <rdfs:range>S. IgE</rdfs:range>
+        <rdfs:range>S. IgG</rdfs:range>
+        <rdfs:range>S. IgM</rdfs:range>
     </rdf:Property>
     
     <!-- Category Test group-->
@@ -358,15 +358,15 @@
     <rdfs:Class rdf:about="&bts;Founder">
         <rdfs:comment>Founder of a Company or Technology or reagent</rdfs:comment>
         <rdf:Seq rdf:parseType="Collection">
-            <rdf:class rdf:about="publisher">
-                <rdf:subClassOf rdf:resource="&dc;publisher" />
-            </rdf:class>
+            <rdfs:class rdf:about="publisher">
+                <rdfs:subClassOf rdf:resource="&dc;publisher" />
+            </rdfs:class>
             <rdfs:Class rdf:about="&dc;description" />
             <rdfs:Class rdf:about="&dc;dateAccepted" />
             <rdfs:Class rdf:about="#License">
-                <rdf:subClassOf rdf:resource="&bts;DataType#Certificate" />
+                <rdfs:subClassOf rdf:resource="&bts;DataType#Certificate" />
             </rdfs:Class>
-            <rdfs:Class rdf:resource="&dbo;media" />
+            <rdfs:Class rdf:about="&dbo;media" />
         </rdf:Seq>
     </rdfs:Class>
     <!-- Property -->
