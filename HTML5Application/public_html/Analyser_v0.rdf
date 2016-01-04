@@ -44,6 +44,8 @@
         <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Health_technology" />
     </rdfs:Class>
     
+    
+    
     <!-- classes -->
     
     <!-- Sub Classes -->
@@ -65,7 +67,70 @@
         <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Customer" />
     </rdfs:Class>
     
+    <rdfs:Class rdf:about="&bts;Similar" >
+        <rdfs:subClassOf rdf:resource="#Category" />
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Customer" />
+    </rdfs:Class>
+    
+    
+    
     <!-- Sub Classes -->
+    <!-- Category Sub Classes -->
+    <rdfs:Class rdf:about="&bts;Biochemistry">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;ClinicalPathology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;CTG">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Cytopathology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dialysis">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;DrugsMonitoring">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;DrugExam">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;ECG">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Endocrinology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Haematology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Histopathology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Immunology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Microbiology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;SerologyImmunology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;TumorMarker">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;USG">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Virology">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;X-Ray">
+        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+    </rdfs:Class>
+    <!--Categoru Sub Classes -->
     
     <!-- non needable Sub Classes -->
     <rdfs:Class rdf:about="&bts;Description" >
@@ -220,6 +285,47 @@
         <rdfs:range rdf:resource="&xsd;double" />
     </rdf:Property>
     <!-- End Analyser to specification  -->
+    
+       
+    <!-- Analyser to Category  -->
+    
+    <!-- Analyser to Category  -->
+    <rdf:Property rdf:about="&bts;analyserCategorys">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Category"/>
+        <rdfs:comment>
+            Analyser to Category link property
+        </rdfs:comment>
+    </rdf:Property>
+    <!-- Category domain range set -->
+    <rdf:Property rdf:about="&bts;categorys">
+        <rdfs:domain rdf:resource="&bts;Category"/>
+        <rdfs:range rdf:resource="&dbo;Biochemistry" />
+        <rdfs:range rdf:resource="&dbo;ClinicalPathology" />
+        <rdfs:range rdf:resource="&dbo;CTG" />
+        <rdfs:range rdf:resource="&dbo;Cytopathology" />
+        <rdfs:range rdf:resource="&dbo;Dialysis" />
+        <rdfs:range rdf:resource="&dbo;DrugsMmonitoring" />
+        <rdfs:range rdf:resource="&dbo;DrugExam" />
+        <rdfs:range rdf:resource="&dbo;ECG" />
+        <rdfs:range rdf:resource="&dbo;Endocrinology" />
+        <rdfs:range rdf:resource="&dbo;Haematology" />
+        <rdfs:range rdf:resource="&dbo;Histopathology" />
+        <rdfs:range rdf:resource="&dbo;Immunology" />
+        <rdfs:range rdf:resource="&dbo;Microbiology" />
+        <rdfs:range rdf:resource="&dbo;SerologyImmunology" />
+        <rdfs:range rdf:resource="&dbo;TumorMarker" />
+        <rdfs:range rdf:resource="&dbo;USG" />
+        <rdfs:range rdf:resource="&dbo;Virology" />
+        <rdfs:range rdf:resource="&dbo;X-Ray" />
+        <rdfs:comment>
+            categorys to Category test groups link property
+        </rdfs:comment>
+    </rdf:Property>
+    
+    
+    <!-- End Analyser to Category  -->
+    
     
     <!-- Analyser to Technologys  -->
     <rdf:Property rdf:about="&bts;AnlyserTechnologys">
