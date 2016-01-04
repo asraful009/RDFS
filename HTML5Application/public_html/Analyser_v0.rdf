@@ -43,6 +43,9 @@
     <rdfs:Class rdf:about="&bts;Specification">
         <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Health_technology" />
     </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;MedicalTest">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Medical_test" />
+    </rdfs:Class>
     
     
     
@@ -77,58 +80,13 @@
     <!-- Sub Classes -->
     <!-- Category Sub Classes -->
     <rdfs:Class rdf:about="&bts;Biochemistry">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;ClinicalPathology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;CTG">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Cytopathology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Dialysis">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;DrugsMonitoring">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;DrugExam">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;ECG">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Endocrinology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+        <rdfs:subClassOf rdf:resource="#Category" />
     </rdfs:Class>
     <rdfs:Class rdf:about="&bts;Haematology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Histopathology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+        <rdfs:subClassOf rdf:resource="#Category" />
     </rdfs:Class>
     <rdfs:Class rdf:about="&bts;Immunology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Microbiology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;SerologyImmunology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;TumorMarker">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;USG">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Virology">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;X-Ray">
-        <rdfs:subClassOf rdf:resource="&dbo;Category" />
+        <rdfs:subClassOf rdf:resource="#Category" />
     </rdfs:Class>
     <!--Categoru Sub Classes -->
     
@@ -299,30 +257,71 @@
     </rdf:Property>
     <!-- Category domain range set -->
     <rdf:Property rdf:about="&bts;categorys">
-        <rdfs:domain rdf:resource="&bts;Category"/>
-        <rdfs:range rdf:resource="&dbo;Biochemistry" />
-        <rdfs:range rdf:resource="&dbo;ClinicalPathology" />
-        <rdfs:range rdf:resource="&dbo;CTG" />
-        <rdfs:range rdf:resource="&dbo;Cytopathology" />
-        <rdfs:range rdf:resource="&dbo;Dialysis" />
-        <rdfs:range rdf:resource="&dbo;DrugsMmonitoring" />
-        <rdfs:range rdf:resource="&dbo;DrugExam" />
-        <rdfs:range rdf:resource="&dbo;ECG" />
-        <rdfs:range rdf:resource="&dbo;Endocrinology" />
-        <rdfs:range rdf:resource="&dbo;Haematology" />
-        <rdfs:range rdf:resource="&dbo;Histopathology" />
-        <rdfs:range rdf:resource="&dbo;Immunology" />
-        <rdfs:range rdf:resource="&dbo;Microbiology" />
-        <rdfs:range rdf:resource="&dbo;SerologyImmunology" />
-        <rdfs:range rdf:resource="&dbo;TumorMarker" />
-        <rdfs:range rdf:resource="&dbo;USG" />
-        <rdfs:range rdf:resource="&dbo;Virology" />
-        <rdfs:range rdf:resource="&dbo;X-Ray" />
+        <rdfs:domain rdf:resource="&bts;Category" />
+        <rdfs:range rdf:resource="&bts;Biochemistry" />
+        <rdfs:range rdf:resource="&bts;Haematology" />
+        <rdfs:range rdf:resource="&bts;Immunology" />
         <rdfs:comment>
             categorys to Category test groups link property
         </rdfs:comment>
     </rdf:Property>
+    <!-- Category Test group-->
+    <rdf:Property rdf:about="&bts;medicalTestList#Biochemistry">
+        <rdfs:domain rdf:resource="&bts;Biochemistry"/>
+        <rdfs:range><rdf:resource>Glucose</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>GTT</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Globulin</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>HBA1C</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Potassium (K+)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Procalcitonin</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Protein S</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Random (RBS)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>TROPONIN - I</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Total Protein</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Transferring</rdf:resource></rdfs:range>        
+    </rdf:Property>
     
+    <rdf:Property rdf:about="&bts;medicalTestList#Haematology">
+        <rdfs:domain rdf:resource="&bts;Haematology"/>
+        <rdfs:range><rdf:resource>APTT</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>BT</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Blood Film (PBF)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>CBC</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>CT</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>DC</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>ESR</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Fibrinogen</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Haemoglobin Electrophoresis</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Hb%</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Platelet count</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Prothrombin Time (INR)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>RBC Parameters</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Reticulocyte count</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Rh Antibody Titre</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Sputum Eosinophil</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>TC</rdf:resource></rdfs:range>
+    </rdf:Property>    
+    
+    <rdf:Property rdf:about="&bts;medicalTestList#Immunology">
+        <rdfs:domain rdf:resource="&bts;Immunology"/>
+        <rdfs:range><rdf:resource>Alpha Feto Protein (AFP)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Anti TB IgM</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Anti TP Strip Test (Syphilis)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Anti Tpo(Anti-Thy.per.Ab)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Anti-TB IgA</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Antibody HSV IgG</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Antibody HSV IgM</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>CFT for Filaria</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>CFT for Kala-Azar</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>IgM  for Rubela</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>Mantoux Test (MT)</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>S. IgA</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>S. IgE</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>S. IgG</rdf:resource></rdfs:range>
+        <rdfs:range><rdf:resource>S. IgM</rdf:resource></rdfs:range>
+    </rdf:Property>
+    
+    <!-- Category Test group-->
     
     <!-- End Analyser to Category  -->
     

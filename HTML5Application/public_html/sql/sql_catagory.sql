@@ -12,3 +12,9 @@ END; //
 DELIMITER ;
 
 SELECT DISTINCT concat("<rdfs:range rdf:resource=\"&dbo;",camelcase(`group`),"\" />") FROM `lab_test` WHERE 1
+
+SELECT DISTINCT concat("<rdfs:range><rdf:resource>",`name`,"</rdf:resource></rdfs:range>") FROM `lab_test` WHERE `group` ="TUMORMARKER"
+
+
+SELECT DISTINCT concat("<rdfs:range rdf:resource=\"&dbo;",camelcase(`group`),"\" />") FROM `lab_test` WHERE 1
+
