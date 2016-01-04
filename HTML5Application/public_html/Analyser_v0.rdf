@@ -46,6 +46,9 @@
     <rdfs:Class rdf:about="&bts;MedicalTest">
         <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Medical_test" />
     </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Reagent">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Reagent" />
+    </rdfs:Class>
     
     
     
@@ -100,7 +103,13 @@
     
     
     <!-- Property  -->
-    
+    <rdf:Property rdf:about="&bts;hasReagent">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Reagent"/>
+        <rdfs:comment>
+            Analyser to reagent link property
+        </rdfs:comment>
+    </rdf:Property>
     <!-- Analyser to specification  -->
     <rdf:Property rdf:about="&bts;specifications">
         <rdfs:domain rdf:resource="&bts;Analyser"/>
@@ -205,11 +214,7 @@
     <rdf:Property rdf:about="&bts;Specifications#ReactionTube">
         <rdfs:domain rdf:resource="&bts;Specification" />
         <rdfs:range rdf:resource="&bts;DataType#Dimension" />
-    </rdf:Property>
-    <rdf:Property rdf:about="&bts;Specifications#Reagents">
-        <rdfs:domain rdf:resource="&bts;Specification" />
-        <rdfs:range rdf:resource="&rdfs;XMLLiteral" />
-    </rdf:Property>
+    </rdf:Property>    
     <rdf:Property rdf:about="&bts;Specifications#RunTime">
         <rdfs:domain rdf:resource="&bts;Specification" />
         <rdfs:range rdf:resource="&xsd;time" />
@@ -330,18 +335,13 @@
     <rdf:Property rdf:about="&bts;AnlyserTechnologys">
         <rdfs:domain rdf:resource="&bts;Analyser"/>
         <rdfs:range rdf:resource="&bts;Technologys"/>
-    </rdf:Property>
-    <!-- Technology domain range set -->
-    <rdf:Property rdf:about="&bts;Technologys">
-        <rdfs:domain rdf:resource="#Technology"/>
-        <rdfs:range  rdf:resource="&rdfs;Literal"/> 
-    </rdf:Property>
+    </rdf:Property>        
     <!-- Technology Enumeration -->
-    <rdfs:Class rdf:ID="Technology">
-        <rdfs:comment>All Specification of Analyser</rdfs:comment>
+    <rdfs:Class rdf:about="Technology">
+        <rdfs:comment>All Technology of Analyser</rdfs:comment>
         <rdf:Seq rdf:parseType="Collection">
-            <rdf:Description rdf:resource="#Founder"></rdf:Description>
-            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>
+            <rdfs:Class rdf:about="#Founder" />
+            <rdfs:Class rdf:about="&dbo;media" />
         </rdf:Seq>
     </rdfs:Class>
     <!-- End Analyser to Technologys  -->
@@ -355,18 +355,18 @@
 
       
     <!-- Founder Enumeration -->
-    <rdfs:Class rdf:ID="Founder">
-        <rdfs:comment>Founder of a Company or Technology</rdfs:comment>
+    <rdfs:Class rdf:about="&bts;Founder">
+        <rdfs:comment>Founder of a Company or Technology or reagent</rdfs:comment>
         <rdf:Seq rdf:parseType="Collection">
             <rdf:class rdf:about="publisher">
-				<rdf:subClassOf rdf:resource="&dc;publisher" />
-			</rdf:class>
-            <rdf:Description rdf:resource="&dc;description"></rdf:Description>
-            <rdf:Description rdf:resource="&dc;ateAccepted"></rdf:Description>
-            <rdf:Description rdf:about="#License">
+                <rdf:subClassOf rdf:resource="&dc;publisher" />
+            </rdf:class>
+            <rdfs:Class rdf:about="&dc;description" />
+            <rdfs:Class rdf:about="&dc;dateAccepted" />
+            <rdfs:Class rdf:about="#License">
                 <rdf:subClassOf rdf:resource="&bts;DataType#Certificate" />
-            </rdf:Description>
-            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>            
+            </rdfs:Class>
+            <rdfs:Class rdf:resource="&dbo;media" />
         </rdf:Seq>
     </rdfs:Class>
     <!-- Property -->
@@ -377,18 +377,18 @@
     <rdfs:Class rdf:about="&bts;Dimension" >
         <rdfs:comment>3D Object</rdfs:comment>
     </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Length" >
-        <rdfs:comment>3D Object</rdfs:comment>
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Dimension" >
-        <rdfs:comment>3D Object</rdfs:comment>
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Dimension" >
-        <rdfs:comment>3D Object</rdfs:comment>
-    </rdfs:Class>
-    <rdfs:Class rdf:about="&bts;Dimension" >
-        <rdfs:comment>3D Object</rdfs:comment>
-    </rdfs:Class>
+     <rdf:Property rdf:about="&bts;Dimension#Length">
+        <rdfs:domain rdf:resource="&bts;Dimension"/>
+        <rdfs:subClassOf rdf:resource="&xsd;double"/>
+    </rdf:Property>
+     <rdf:Property rdf:about="&bts;Dimension#Weight">
+        <rdfs:domain rdf:resource="&bts;Dimension"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+     <rdf:Property rdf:about="&bts;Dimension#Hight">
+        <rdfs:domain rdf:resource="&bts;Dimension"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
     
     <!-- DataType Class -->    
     <rdfs:Datatype rdf:about="&xsd;string"/>
