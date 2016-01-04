@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [    
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY dbo "http://dbpedia.org/ontology/" >    
+    <!ENTITY bts "http://biotechservices-bd.com/" >
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"    
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dbo="http://dbpedia.org/ontology/"    
+    xmlns="http://biotechservices-bd.com/"   >
+    
+    <!-- creator -->
+    <rdf:Description rdf:about="&bts;">
+        <dc:creator rdf:datatype="&xsd;string">
+            Asraful Islam
+        </dc:creator>
+    </rdf:Description>    
+    <!-- creator -->
+    
+    <!-- classes -->
+    <rdfs:Class rdf:about="&bts;Analyser">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Automated_analyser" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Model">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Version_control" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Category">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Group_technology" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Technology">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Health_technology" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Specification">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Health_technology" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;MedicalTest">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Medical_test" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Reagent">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Reagent" />
+    </rdfs:Class>
+    
+    
+    
+    <!-- classes -->
+    
+    <!-- Sub Classes -->
+    <rdfs:Class rdf:about="&bts;Manufactory">
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Industry" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;MarketingBy" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Marketing" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Distributor" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:subClassOf rdf:resource="&bts;MarketingBy" />        
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Trading_company" />
+    </rdfs:Class>    
+    <rdfs:Class rdf:about="&bts;Customer" >
+        <rdfs:subClassOf rdf:resource="&dbo;Company" />
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Customer" />
+    </rdfs:Class>
+    
+    <rdfs:Class rdf:about="&bts;Similar" >
+        <rdfs:subClassOf rdf:resource="#Category" />
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Customer" />
+    </rdfs:Class>
+    
+    
+    
+    <!-- Sub Classes -->
+    <!-- Category Sub Classes -->
+    <rdfs:Class rdf:about="&bts;Biochemistry">
+        <rdfs:subClassOf rdf:resource="#Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Haematology">
+        <rdfs:subClassOf rdf:resource="#Category" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Immunology">
+        <rdfs:subClassOf rdf:resource="#Category" />
+    </rdfs:Class>
+    <!--Categoru Sub Classes -->
+    
+    <!-- non needable Sub Classes -->
+    <rdfs:Class rdf:about="&bts;Description" >
+        <rdfs:subClassOf rdf:resource="&dc;description" />
+    </rdfs:Class>
+    <!-- non needable Sub Classes -->
+    
+    
+    
+    
+    <!-- Property  -->
+    <rdf:Property rdf:about="&bts;hasReagent">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Reagent"/>
+        <rdfs:comment>
+            Analyser to reagent link property
+        </rdfs:comment>
+    </rdf:Property>
+    <!-- Analyser to specification  -->
+    <rdf:Property rdf:about="&bts;specifications">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Specification"/>
+        <rdfs:comment>
+            Analyser to Specification link property
+        </rdfs:comment>
+    </rdf:Property>
+    <!-- specifications domain range set -->
+    <rdf:Property rdf:about="&bts;Specifications#Analysis_Time">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;time"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#AutomationCapabilities">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#CalibrationMethods">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Technology"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#CalibratorQC_Input">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;integer" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#Certificates">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Certificate" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#hasComputer">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#DataStorage">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;integer" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#Dimensions">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Dimension" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#ElectricalPowerRequirements">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;decimal" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#hasElectrodes">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#hasExternalPrinter">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#FilterSecifications">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Technology" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#HostInterfaces">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Device_Peripheral" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#hasMatrixPlot">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;boolean" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#MeasuredParameters">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;integer" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#MeasuringRange">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Range" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#SampleVolume">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&rdfs;Literal" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#OpenSystem">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#OperatingConditions">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&rdfs;Literal" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#OperatingParameters">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&rdfs;Literal" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#PossibleWorkflows">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&rdfs;XMLLiteral"/>
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#ProgrammableParameters">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&rdfs;XMLLiteral" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#QC_Methods">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Technology" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#ReactionTube">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Dimension" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#RunTime">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;time" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#BarcodeTypes">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;string" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#SampleNumbersPerHour">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;integer" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#Software">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;anyURI" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#StartUpTime">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;time" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#TestMethods">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Technology" />
+    </rdf:Property>    
+    <rdf:Property rdf:about="&bts;Specifications#Throughput">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;time" />
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#Weight_KG">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;double" />
+    </rdf:Property>
+    <!-- End Analyser to specification  -->
+    
+       
+    <!-- Analyser to Category  -->
+    
+    <!-- Analyser to Category  -->
+    <rdf:Property rdf:about="&bts;analyserCategorys">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Category"/>
+        <rdfs:comment>
+            Analyser to Category link property
+        </rdfs:comment>
+    </rdf:Property>
+    <!-- Category domain range set -->
+    <rdf:Property rdf:about="&bts;categorys">
+        <rdfs:domain rdf:resource="&bts;Category" />
+        <rdfs:range rdf:resource="&bts;Biochemistry" />
+        <rdfs:range rdf:resource="&bts;Haematology" />
+        <rdfs:range rdf:resource="&bts;Immunology" />
+        <rdfs:comment>
+            categorys to Category test groups link property
+        </rdfs:comment>
+    </rdf:Property>
+    <!-- Category Test group-->
+    <rdf:Property rdf:about="&bts;medicalTestList#Biochemistry">
+        <rdfs:domain rdf:resource="&bts;Biochemistry"/>
+        <rdfs:range>Glucose</rdfs:range>
+        <rdfs:range>GTT</rdfs:range>
+        <rdfs:range>Globulin</rdfs:range>
+        <rdfs:range>HBA1C</rdfs:range>
+        <rdfs:range>Potassium (K+)</rdfs:range>
+        <rdfs:range>Procalcitonin</rdfs:range>
+        <rdfs:range>Protein S</rdfs:range>
+        <rdfs:range>Random (RBS)</rdfs:range>
+        <rdfs:range>TROPONIN - I</rdfs:range>
+        <rdfs:range>Total Protein</rdfs:range>
+        <rdfs:range>Transferring</rdfs:range>        
+    </rdf:Property>
+    
+    <rdf:Property rdf:about="&bts;medicalTestList#Haematology">
+        <rdfs:domain rdf:resource="&bts;Haematology"/>
+        <rdfs:range>APTT</rdfs:range>
+        <rdfs:range>BT</rdfs:range>
+        <rdfs:range>Blood Film (PBF)</rdfs:range>
+        <rdfs:range>CBC</rdfs:range>
+        <rdfs:range>CT</rdfs:range>
+        <rdfs:range>DC</rdfs:range>
+        <rdfs:range>ESR</rdfs:range>
+        <rdfs:range>Fibrinogen</rdfs:range>
+        <rdfs:range>Haemoglobin Electrophoresis</rdfs:range>
+        <rdfs:range>Hb%</rdfs:range>
+        <rdfs:range>Platelet count</rdfs:range>
+        <rdfs:range>Prothrombin Time (INR)</rdfs:range>
+        <rdfs:range>RBC Parameters</rdfs:range>
+        <rdfs:range>Reticulocyte count</rdfs:range>
+        <rdfs:range>Rh Antibody Titre</rdfs:range>
+        <rdfs:range>Sputum Eosinophil</rdfs:range>
+        <rdfs:range>TC</rdfs:range>
+    </rdf:Property>    
+    
+    <rdf:Property rdf:about="&bts;medicalTestList#Immunology">
+        <rdfs:domain rdf:resource="&bts;Immunology"/>
+        <rdfs:range>Alpha Feto Protein (AFP)</rdfs:range>
+        <rdfs:range>Anti TB IgM</rdfs:range>
+        <rdfs:range>Anti TP Strip Test (Syphilis)</rdfs:range>
+        <rdfs:range>Anti Tpo(Anti-Thy.per.Ab)</rdfs:range>
+        <rdfs:range>Anti-TB IgA</rdfs:range>
+        <rdfs:range>Antibody HSV IgG</rdfs:range>
+        <rdfs:range>Antibody HSV IgM</rdfs:range>
+        <rdfs:range>CFT for Filaria</rdfs:range>
+        <rdfs:range>CFT for Kala-Azar</rdfs:range>
+        <rdfs:range>IgM  for Rubela</rdfs:range>
+        <rdfs:range>Mantoux Test (MT)</rdfs:range>
+        <rdfs:range>S. IgA</rdfs:range>
+        <rdfs:range>S. IgE</rdfs:range>
+        <rdfs:range>S. IgG</rdfs:range>
+        <rdfs:range>S. IgM</rdfs:range>
+    </rdf:Property>
+    
+    <!-- Category Test group-->
+    
+    <!-- End Analyser to Category  -->
+    
+    
+    <!-- Analyser to Technologys  -->
+    <rdf:Property rdf:about="&bts;AnlyserTechnologys">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Technologys"/>
+    </rdf:Property>        
+    <!-- Technology Enumeration -->
+    <rdfs:Class rdf:about="Technology">
+        <rdfs:comment>All Technology of Analyser</rdfs:comment>
+        <rdf:Seq rdf:parseType="Collection">
+            <rdfs:Class rdf:about="#Founder" />
+            <rdfs:Class rdf:about="&dbo;media" />
+        </rdf:Seq>
+    </rdfs:Class>
+    <!-- End Analyser to Technologys  -->
+   
+    <!-- Similar Analysers  -->    
+    <rdf:Property rdf:about="&bts;SimilarAnalysers">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Analyser"/>
+    </rdf:Property>
+    <!-- end Similar Analysers  -->
+
+      
+    <!-- Founder Enumeration -->
+    <rdfs:Class rdf:about="&bts;Founder">
+        <rdfs:comment>Founder of a Company or Technology or reagent</rdfs:comment>
+        <rdf:Seq rdf:parseType="Collection">
+            <rdfs:class rdf:about="publisher">
+                <rdfs:subClassOf rdf:resource="&dc;publisher" />
+            </rdfs:class>
+            <rdfs:Class rdf:about="&dc;description" />
+            <rdfs:Class rdf:about="&dc;dateAccepted" />
+            <rdfs:Class rdf:about="#License">
+                <rdfs:subClassOf rdf:resource="&bts;DataType#Certificate" />
+            </rdfs:Class>
+            <rdfs:Class rdf:about="&dbo;media" />
+        </rdf:Seq>
+    </rdfs:Class>
+    <!-- Property -->
+    
+    
+    <!-- Data Type -->
+    <!-- DataType Class -->
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+     <rdf:Property rdf:about="&bts;Dimension#Length">
+        <rdfs:domain rdf:resource="&bts;Dimension"/>
+        <rdfs:subClassOf rdf:resource="&xsd;double"/>
+    </rdf:Property>
+     <rdf:Property rdf:about="&bts;Dimension#Weight">
+        <rdfs:domain rdf:resource="&bts;Dimension"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+     <rdf:Property rdf:about="&bts;Dimension#Hight">
+        <rdfs:domain rdf:resource="&bts;Dimension"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    
+    <!-- DataType Class -->    
+    <rdfs:Datatype rdf:about="&xsd;string"/>
+    <!-- date -->
+    <rdfs:Datatype rdf:about="&xsd;date"/>
+    <rdfs:Datatype rdf:about="&xsd;dateTime"/>
+    <rdfs:Datatype rdf:about="&xsd;time"/>
+    <rdfs:Datatype rdf:about="&xsd;duration"/>
+    <!-- Numeric -->
+    <rdfs:Datatype rdf:about="&xsd;byte"/>
+    <rdfs:Datatype rdf:about="&xsd;decimal"/>
+    <rdfs:Datatype rdf:about="&xsd;integer"/>
+    <rdfs:Datatype rdf:about="&xsd;long"/>
+    <rdfs:Datatype rdf:about="&xsd;double"/>
+    <!-- Miscellaneous -->
+    <rdfs:Datatype rdf:about="&xsd;anyURI"/>
+    <rdfs:Datatype rdf:about="&xsd;boolean"/>
+    <rdfs:Datatype rdf:about="&xsd;hexBinary"/>
+    <rdfs:Datatype rdf:about="&xsd;base64Binaryy"/>
+    <!-- bts datatype -->
+    <rdfs:Datatype rdf:about="&bts;DataType#Technology">
+        <rdfs:subClassOf rdf:resource="#Technology"/>
+        <rdfs:label>Technology</rdfs:label>
+        <rdfs:comment>Technology</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Certificate">
+        <rdfs:subClassOf rdf:resource="&dc;Policy"/>
+        <rdfs:label>Certificate</rdfs:label>
+        <rdfs:comment>Agreement Certificate</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Dimension">
+        <rdfs:subClassOf rdf:resource="&xsd;double"/>
+        <rdfs:label>Certificate</rdfs:label>
+        <rdfs:comment>Certificate</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Device_Peripheral">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Peripheral"/>
+        <rdfs:label>Device Peripheral</rdfs:label>
+        <rdfs:comment>Device Peripheral</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Class rdf:about="&bts;DataType#Range">
+        <rdfs:subClassOf rdf:resource="&xsd;decimal" />
+    </rdfs:Class>
+    <rdf:Property rdf:about="&bts;DataType#RangeMin">
+        <rdfs:domain rdf:resource="&bts;DataType#Range"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;DataType#RangeMax">
+        <rdfs:domain rdf:resource="&bts;DataType#Range"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <!-- End xsd Data Type -->
+    
+    
+    
+</rdf:RDF>
