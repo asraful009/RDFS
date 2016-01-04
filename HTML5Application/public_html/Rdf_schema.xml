@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [    
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY dbo "http://dbpedia.org/ontology/" >    
+    <!ENTITY bts "http://biotechservices-bd.com/" >
+]>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"    
+    xmlns:dbo="http://dbpedia.org/ontology/"    
+    xmlns="http://biotechservices-bd.com/"   >
+    
+    <!-- creator -->
+    <rdf:Description rdf:about="&bts;">
+        <dc:creator rdf:datatype="&xsd;string">
+            Asraful Islam
+        </dc:creator>
+    </rdf:Description>    
+    <!-- creator -->
+    
+    <!-- classes -->
+    <rdfs:Class rdf:about="&bts;Analyser">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Automated_analyser" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Model">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Version_control" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Category">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Group_technology" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Technology">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Health_technology" />
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Specification">
+        <rdfs:comment rdf:resource="https://en.wikipedia.org/wiki/Health_technology" />
+    </rdfs:Class>
+    
+    <!-- classes -->
+   
+    
+    
+    
+    <!-- Property  -->
+    
+    <!-- Analyser to specification  -->
+    <rdf:Property rdf:about="&bts;specifications">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Specification"/>
+        <rdfs:comment>
+            Analyser to Specification link property
+        </rdfs:comment>
+    </rdf:Property>
+    <!-- specifications domain range set -->
+    <rdf:Property rdf:about="&bts;Specifications#Analysis_Time">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&xsd;time"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;Specifications#Dimensions">
+        <rdfs:domain rdf:resource="&bts;Specification" />
+        <rdfs:range rdf:resource="&bts;DataType#Dimension" />
+    </rdf:Property>    
+    <!-- End Analyser to specification  -->
+    
+    <!-- Similar Analysers  -->    
+    <rdf:Property rdf:about="&bts;SimilarAnalysers">
+        <rdfs:domain rdf:resource="&bts;Analyser"/>
+        <rdfs:range rdf:resource="&bts;Analyser"/>
+    </rdf:Property>
+    <!-- end Similar Analysers  -->
+
+      
+    <!-- Founder Enumeration -->
+    <rdfs:Class rdf:ID="Founder">
+        <rdfs:comment>Founder of a Company or Technology</rdfs:comment>
+        <rdf:Seq rdf:parseType="Collection">
+            <rdf:class rdf:about="publisher">
+				<rdf:subClassOf rdf:resource="&dc;publisher" />
+			</rdf:class>
+            <rdf:Description rdf:resource="&dc;description"></rdf:Description>
+            <rdf:Description rdf:resource="&dc;ateAccepted"></rdf:Description>
+            <rdf:Description rdf:about="#License">
+                <rdf:subClassOf rdf:resource="&bts;DataType#Certificate" />
+            </rdf:Description>
+            <rdf:Description rdf:resource="&dbo;media"></rdf:Description>            
+        </rdf:Seq>
+    </rdfs:Class>
+    <!-- Property -->
+    
+    
+    <!-- Data Type -->
+    <!-- DataType Class -->
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Length" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="&bts;Dimension" >
+        <rdfs:comment>3D Object</rdfs:comment>
+    </rdfs:Class>
+    
+    <!-- DataType Class -->    
+
+    <rdfs:Datatype rdf:about="&xsd;time"/>
+    <rdfs:Datatype rdf:about="&bts;DataType#Dimension">
+        <rdfs:subClassOf rdf:resource="&xsd;double"/>
+        <rdfs:label>Certificate</rdfs:label>
+        <rdfs:comment>Certificate</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Datatype rdf:about="&bts;DataType#Device_Peripheral">
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Peripheral"/>
+        <rdfs:label>Device Peripheral</rdfs:label>
+        <rdfs:comment>Device Peripheral</rdfs:comment>
+    </rdfs:Datatype>
+    <rdfs:Class rdf:about="&bts;DataType#Range">
+        <rdfs:subClassOf rdf:resource="&xsd;decimal" />
+    </rdfs:Class>
+    <rdf:Property rdf:about="&bts;DataType#RangeMin">
+        <rdfs:domain rdf:resource="&bts;DataType#Range"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="&bts;DataType#RangeMax">
+        <rdfs:domain rdf:resource="&bts;DataType#Range"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </rdf:Property>
+    <!-- End xsd Data Type -->
+    
+    
+    
+</rdf:RDF>
