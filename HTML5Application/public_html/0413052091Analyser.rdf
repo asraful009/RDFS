@@ -418,12 +418,7 @@
         <rdfs:subClassOf rdf:resource="&dc;Policy"/>
         <rdfs:label>Certificate</rdfs:label>
         <rdfs:comment>Agreement Certificate</rdfs:comment>
-    </rdfs:Datatype>
-    <rdfs:Datatype rdf:about="&bts;DataType#Dimension">
-        <rdfs:subClassOf rdf:resource="&xsd;double"/>
-        <rdfs:label>Certificate</rdfs:label>
-        <rdfs:comment>Certificate</rdfs:comment>
-    </rdfs:Datatype>
+    </rdfs:Datatype>    
     <rdfs:Datatype rdf:about="&bts;DataType#Device_Peripheral">
         <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Peripheral"/>
         <rdfs:label>Device Peripheral</rdfs:label>
